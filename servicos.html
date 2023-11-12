@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Portfólio pessoal</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <!--
+       https://www.w3resource.com/javascript-exercises/javascript-dom-exercises.php
+       https://practity.com/582-2/
+       https://www.w3resource.com/javascript-exercises/javascript-functions-exercises.php
+
+   -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' href='main.css'>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="upf.png" alt="Logo" width="80" height="50" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link active" href="servicos.html">Serviços</a>
+                    <a class="nav-link" href="#">Matrícula</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="divTelaCheia">
+        <div id="divCentro"> <!-- precisa existir mas sem css-->
+            <h2>Serviços de estudo JS</h2>
+            <label>Selecione:</label>
+            <!--------class form select apenas-----aria label é leitor de tela--->
+            <select class="form-select" id="selectServico" onchange="mudaServico()">
+                <option value="1">IMC</option>
+                <option value="2">Percentual</option>
+                <option value="3">Buscar endereço</option>
+                <option value="4">Troca cor</option>
+                <option value="5">Ordenação</option>
+            </select>
+            <br>
+
+            <hr>
+            <div id="divIMC"> <!--label for e class form control-->
+                <label for="peso">Digite o peso (em Kg):</label><br>
+                <input class="form-control" id="peso" type="number" value="0"><br>
+                <label for="altura">Digite a altura (em metros):</label><br>
+                <input class="form-control" id="altura" type="number" value="0">
+                <br>
+                <div class="text-center"> <!--alinhamento centralizado-->
+                    <button class="btn btn-success" onclick="calculaIMC()">Calcular IMC</button>
+                    <br><br>
+                    <label id="resultadoIMC"></label>
+                </div>
+
+            </div>
+
+            <div id="divPorcento">
+                <label for="porcento">Quanto é (%)...</label><br>
+                <input id="porcento" type="number" value="0"><br>
+                <label for="valorTotal">de:</label><br>
+                <input id="valorTotal" type="number" value="0">
+                <br><br>
+                <button onclick="calculaPorcento()">Calcular porcento</button><br><br><br>
+                <label id="resultadoPorCento"></label>
+
+            </div>
+
+
+            <div id="divBuscaCEP">
+                <label for="cep">Informe o CEP</label><br>
+                <input id="cep" type="number" value="0"><br>
+
+                <br><br>
+                <button onclick="buscaEnderecoCEP()">Buscar endereço</button><br><br><br>
+                <label id="resultadoCEP"></label>
+
+            </div>
+
+            <div id="divColor">
+                <label>Selecione a cor:</label>
+                <br>
+                <select id="selectColor" onchange="mudaCor()">
+                    <option value="#454d6b">Default</option>
+                    <option value="blue">Azul</option>
+                    <option value="red">vermelho</option>
+                    <option value="green">Verde</option>
+                </select>
+
+            </div>
+
+            <div id="divOrdenacao">
+                <label>Digite a sequencia de números:</label>
+                <br>
+                <input id="inputNumbers" placeholder="Ex.: 9,4,2,3" type="text">
+                <button onclick="ordenar()">Ordenar</button><br><br><br>
+                <label id="resultadoOrdenado"></label>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src='main.js'></script>
+</body>
+
+</html>
