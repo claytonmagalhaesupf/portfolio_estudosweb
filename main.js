@@ -1,5 +1,3 @@
-
-
 //document.getElementById('divIMC').style.display = 'none';
 //document.getElementById('divPorcento').style.display = 'none';
 //document.getElementById('divBuscaCEP').style.display = 'none';
